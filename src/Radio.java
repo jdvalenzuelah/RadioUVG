@@ -1,7 +1,7 @@
 
 public interface Radio {
 	
-//Hengstenberg
+//Hengstenbergq
  String frecAdelante();
 	
 	public String frecAtras();
