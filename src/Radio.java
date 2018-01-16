@@ -79,7 +79,7 @@ public class Radio implements InterfazRadio {
 	@Override
 	public String cambioFrecuencia() {
 		// TODO Auto-generated method stub
-		return null;
+		return "";
 	}
 
 	@Override
