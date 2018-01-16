@@ -18,8 +18,8 @@ public class Radio implements InterfazRadio {
 	 * 
 	 */
 	public Radio() {
-		this.frecueciaActual = "fm";
-		this.estacionActual = "87.9";
+		this.frecueciaActual = "am";
+		this.estacionActual = "530";
 		this.power = false;
 		this.estacionesGuardadasAm = new int[12];
 		this.estacionesGuardadasFm = new float[12];
@@ -58,7 +58,7 @@ public class Radio implements InterfazRadio {
 			}
 			break;
 		case "fm":
-			if(Float.parseFloat(this.estacionActual) > 87.9) {
+			if(Float.parseFloat(this.estacionActual) > 87.8) {
 				this.estacionActual = Float.toString(Float.parseFloat(this.mostrarEstacion()) - (float) 0.2);
 			}else {
 				this.estacionActual = Float.toString((float) 107.9);
