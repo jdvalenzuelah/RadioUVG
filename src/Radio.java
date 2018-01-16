@@ -11,14 +11,18 @@ public class Radio implements InterfazRadio {
 	private boolean power;
 	private String frecueciaActual;
 	private String estacionActual;
+	private int[] estacionesGuardadasAm;
+	private float[] estacionesGuardadasFm;
 	
 	/**
 	 * 
 	 */
 	public Radio() {
-		this.frecueciaActual = "am";
-		this.estacionActual = "530";
+		this.frecueciaActual = "fm";
+		this.estacionActual = "87.9";
 		this.power = false;
+		this.estacionesGuardadasAm = new int[12];
+		this.estacionesGuardadasFm = new float[12];
 	}
 	
 	@Override
@@ -78,19 +82,31 @@ public class Radio implements InterfazRadio {
 
 	@Override
 	public String cambioFrecuencia() {
-		// TODO Auto-generated method stub
-		return "";
+		if(this.frecueciaActual.toLowerCase().equals("am")){
+			this.frecueciaActual = "fm";
+			this.estacionActual = "87.9";
+		}else if(this.frecueciaActual.toLowerCase().equals("fm")) {
+			this.frecueciaActual = "am";
+			this.estacionActual = "530";
+		}else {
+			this.frecueciaActual = "fm";
+			this.estacionActual = "87.9";
+		}
+		return this.frecueciaActual;
 	}
 
 	@Override
 	public void guardarFrecAm(int frec, int pos) {
-		// TODO Auto-generated method stub
-		
+		if(frec <= 1610 && frec >= 530 && frec % 10 == 0 && pos >= 0 && pos <= 12) {
+			this.estacionesGuardadasAm[pos] = frec;
+		}
 	}
 
 	@Override
 	public void guardarFrecFm(float frec, int pos) {
-		// TODO Auto-generated method stub
+		if((double) frec <= 107.9 && (double) frec >= 87.9 &&  pos >= 0 && pos <= 12) {
+			this.estacionesGuardadasFm[pos] = frec;
+		}
 		
 	}
 
