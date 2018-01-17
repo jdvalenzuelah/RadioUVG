@@ -11,8 +11,7 @@ public class Radio implements InterfazRadio {
 	private boolean power;
 	private String frecueciaActual;
 	private String estacionActual;
-	private int[] estacionesGuardadasAm;
-	private double[] estacionesGuardadasFm;
+	private String[] estacionesGuardadas;
 	
 	/**
 	 * 
@@ -21,8 +20,8 @@ public class Radio implements InterfazRadio {
 		this.frecueciaActual = "am";
 		this.estacionActual = "530";
 		this.power = false;
-		this.estacionesGuardadasAm = new int[12];
-		this.estacionesGuardadasFm = new double[12];
+		this.estacionesGuardadas = new String[12];
+		this.frecGuardadas = new String[12];
 	}
 	
 	@Override
@@ -37,7 +36,7 @@ public class Radio implements InterfazRadio {
 			break;
 		case "fm":
 			if(Double.parseDouble(this.estacionActual) < 107.9) {
-				this.estacionActual = Double.toString(Double.parseDouble(this.estacionActual) - 0.2);
+				this.estacionActual = String.format("%.1f", (Double.parseDouble(this.estacionActual) + 0.2));
 			}else {
 				this.estacionActual = Double.toString(87.9);
 			}
@@ -58,7 +57,7 @@ public class Radio implements InterfazRadio {
 			}
 			break;
 		case "fm":
-			if(Double.parseDouble(this.estacionActual) > 87.8) {
+			if(Double.parseDouble(this.estacionActual) > 87.9) {
 				this.estacionActual = String.format("%.1f", (Double.parseDouble(this.estacionActual) -0.2));
 			}else {
 				this.estacionActual = Double.toString(107.9);
@@ -72,13 +71,13 @@ public class Radio implements InterfazRadio {
 
 	@Override
 	public boolean prender() {
-		this.setPower(true);
+		this.power = true;
 		return true;
 	}
 
 	@Override
 	public boolean apagar() {
-		this.setPower(false);
+		this.power = false;
 		return true;
 	}
 
@@ -100,38 +99,24 @@ public class Radio implements InterfazRadio {
 	@Override
 	public void guardarFrecAm(int frec, int pos) {
 		if(frec <= 1610 && frec >= 530 && frec % 10 == 0 && pos >= 0 && pos <= 12) {
-			this.estacionesGuardadasAm[pos] = frec;
+			this.estacionesGuardadas[pos] = Integer.toString(frec);
 		}
 	}
 
 	@Override
 	public void guardarFrecFm(float frec, int pos) {
 		if((double) frec <= 107.9 && (double) frec >= 87.9 &&  pos >= 0 && pos <= 12) {
-			this.estacionesGuardadasFm[pos] = frec;
+			this.estacionesGuardadas[pos] = String.format("%.1f", frec);
 		}
 		
 	}
 
 	@Override
 	public String mostrarEstacion() {
-		
 		return this.estacionActual;
 	}
 
-	/**
-	 * @return the power
-	 */
-	public boolean isPower() {
-		return power;
-	}
-
-	/**
-	 * @param power the power to set
-	 */
-	public void setPower(boolean power) {
-		this.power = power;
-	}
-
+	
 	/**
 	 * @return the frecueciaActual
 	 */
@@ -145,5 +130,16 @@ public class Radio implements InterfazRadio {
 	public void setFrecueciaActual(String frecueciaActual) {
 		this.frecueciaActual = frecueciaActual;
 	}
+
+	@Override
+	public boolean estaPrendido() {
+		return power;
+	}
+
+	@Override
+	public String obtenerEstacion(int pos) {
+		
+	}
+
 
 }

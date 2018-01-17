@@ -89,6 +89,8 @@ public class RadioGUI {
 				lblEstacionActual.setText(radio.mostrarEstacion());
 			}else if(evento.getSource().equals(btnAnterior)) {
 				lblEstacionActual.setText(radio.frecAtras());
+			}else if(evento.getSource().equals(button)) {
+				lblEstacionActual.setText(radio.frecAdelante());
 			}
 			
 		}

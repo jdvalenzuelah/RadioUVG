@@ -56,4 +56,17 @@ public interface InterfazRadio {
 	 * @return
 	 */
 	public String mostrarEstacion(); 
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public boolean estaPrendido();
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String obtenerEstacion(int pos);
+	
 }
