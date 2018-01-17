@@ -12,7 +12,7 @@ public class Radio implements InterfazRadio {
 	private String frecueciaActual;
 	private String estacionActual;
 	private int[] estacionesGuardadasAm;
-	private float[] estacionesGuardadasFm;
+	private double[] estacionesGuardadasFm;
 	
 	/**
 	 * 
@@ -22,7 +22,7 @@ public class Radio implements InterfazRadio {
 		this.estacionActual = "530";
 		this.power = false;
 		this.estacionesGuardadasAm = new int[12];
-		this.estacionesGuardadasFm = new float[12];
+		this.estacionesGuardadasFm = new double[12];
 	}
 	
 	@Override
@@ -36,10 +36,10 @@ public class Radio implements InterfazRadio {
 			}
 			break;
 		case "fm":
-			if(Float.parseFloat(this.estacionActual) < 107.9) {
-				this.estacionActual = Float.toString(Float.parseFloat(this.mostrarEstacion()) + (float) 0.2);
+			if(Double.parseDouble(this.estacionActual) < 107.9) {
+				this.estacionActual = Double.toString(Double.parseDouble(this.estacionActual) - 0.2);
 			}else {
-				this.estacionActual = Float.toString((float) 87.9);
+				this.estacionActual = Double.toString(87.9);
 			}
 			break;
 		}
@@ -58,10 +58,12 @@ public class Radio implements InterfazRadio {
 			}
 			break;
 		case "fm":
-			if(Float.parseFloat(this.estacionActual) > 87.8) {
-				this.estacionActual = Float.toString(Float.parseFloat(this.mostrarEstacion()) - (float) 0.2);
+			if(Double.parseDouble(this.estacionActual) > 87.8) {
+				this.estacionActual = String.format("%.1f", (Double.parseDouble(this.estacionActual) -0.2));
 			}else {
-				this.estacionActual = Float.toString((float) 107.9);
+				this.estacionActual = Double.toString(107.9);
+				
+				
 			}
 			break;
 		}

@@ -63,7 +63,7 @@ public class RadioGUI {
 		frame.getContentPane().add(button);
 		
 		lblEstacionActual = new JLabel("EstacionActual");
-		lblEstacionActual.setBounds(292, 268, 347, 189);
+		lblEstacionActual.setBounds(292, 268, 490, 189);
 		frame.getContentPane().add(lblEstacionActual);
 		lblEstacionActual.setFont(new Font("Tahoma", Font.PLAIN, 90));
 		
