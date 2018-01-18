@@ -6,7 +6,7 @@
  * @author daval
  *
  */
-public class Radio implements InterfazRadio {
+public class Radio implements RadioI {
 
 
 }
