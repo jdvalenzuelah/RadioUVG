@@ -42,7 +42,7 @@ public interface RadioI {
     
     /**
      * Guarda una estacion de radio en uno de los doce botonoes que tiene la radio
-     * enumerados de 0 a11.
+     * enumerados de 1 a 12.
      * @param frec Estacion de radio que se guardara
      * @param pos Numero del boton donde se guarda el boton
      */

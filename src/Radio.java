@@ -11,7 +11,7 @@ public class Radio implements RadioI {
 	private boolean power;
 	private String frecueciaActual;
 	private String estacionActual;
-	private String[][] estacionesGuardadas;
+	private String[] estacionesGuardadas;
 	
 	/**
 	 * 
@@ -20,7 +20,7 @@ public class Radio implements RadioI {
 		this.frecueciaActual = "am";
 		this.estacionActual = "530";
 		this.power = false;
-		this.estacionesGuardadas = new String[12][2];
+		this.estacionesGuardadas = new String[12];
 	}
 	
 	/**
@@ -29,7 +29,7 @@ public class Radio implements RadioI {
 	 * @param estacionActual
 	 * @param estacionesGuardadas
 	 */
-	public Radio(boolean power, String frecueciaActual, String estacionActual, String[][] estacionesGuardadas) {
+	public Radio(boolean power, String frecueciaActual, String estacionActual, String[] estacionesGuardadas) {
 		super();
 		this.power = power;
 		this.frecueciaActual = frecueciaActual;
@@ -124,16 +124,25 @@ public class Radio implements RadioI {
 		return this.frecueciaActual;
 	}
 
+	/* (non-Javadoc)
+	 * @see RadioI#guardarFrec(float, int)
+	 */
 	@Override
 	public void guardarFrec(float frec, int pos) {
-		// TODO Auto-generated method stub
+		// Ajustamos a las posiciones del vector
+		frec = frec -1; 
+		if(pos>=0 && pos <= 11) {	
+			this.estacionesGuardadas[pos] = Float.toString(frec);
+		}
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see RadioI#mostrarEstacion()
+	 */
 	@Override
 	public String mostrarEstacion() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.estacionActual;
 	}
 
 
