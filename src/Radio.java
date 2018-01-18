@@ -11,7 +11,7 @@ public class Radio implements InterfazRadio {
 	private boolean power;
 	private String frecueciaActual;
 	private String estacionActual;
-	private String[] estacionesGuardadas;
+	private String[][] estacionesGuardadas;
 	
 	/**
 	 * 
@@ -20,8 +20,7 @@ public class Radio implements InterfazRadio {
 		this.frecueciaActual = "am";
 		this.estacionActual = "530";
 		this.power = false;
-		this.estacionesGuardadas = new String[12];
-		this.frecGuardadas = new String[12];
+		this.estacionesGuardadas = new String[12][2];
 	}
 	
 	@Override
@@ -99,14 +98,16 @@ public class Radio implements InterfazRadio {
 	@Override
 	public void guardarFrecAm(int frec, int pos) {
 		if(frec <= 1610 && frec >= 530 && frec % 10 == 0 && pos >= 0 && pos <= 12) {
-			this.estacionesGuardadas[pos] = Integer.toString(frec);
+			this.estacionesGuardadas[pos][0] = Integer.toString(frec);
+			this.estacionesGuardadas[pos][1] = "AM";
 		}
 	}
 
 	@Override
 	public void guardarFrecFm(float frec, int pos) {
 		if((double) frec <= 107.9 && (double) frec >= 87.9 &&  pos >= 0 && pos <= 12) {
-			this.estacionesGuardadas[pos] = String.format("%.1f", frec);
+			this.estacionesGuardadas[pos][0] = String.format("%.1f", frec);
+			this.estacionesGuardadas[pos][1] = "FM";
 		}
 		
 	}
@@ -138,7 +139,7 @@ public class Radio implements InterfazRadio {
 
 	@Override
 	public String obtenerEstacion(int pos) {
-		
+		return "";
 	}
 
 
