@@ -5,27 +5,27 @@ import org.junit.Test;
 
 public class PruebaRadio {
 
-	public RadioI radio;
+	public RadioI radio = new Radio();
 	
 	@Before
 	public void before() {
-		radio = new Radio();
 		// Estado inicial AM 530
 		radio.prender();
 		
 	}
 	
 	@Test
-	public  void  pruebaFrecuencia() {
-		// Estado inicial AM 530
-		
+	public  void  pruebaCambioFrecuenciaAFM() {
 		// Cambio a FM
 		String frecuencia = radio.cambioFrecuencia();
-		assertEquals("FM", frecuencia);
-		
+		assertEquals("fm", frecuencia);
+	}
+	
+	@Test
+	public void pruebaCambioFrecuenciaAAM() {
 		// Cambia a AM
-		frecuencia = radio.cambioFrecuencia();
-		assertEquals("AM", frecuencia);
+		String frecuencia = radio.cambioFrecuencia();
+		assertEquals("am", frecuencia);
 	}
 	
 }
