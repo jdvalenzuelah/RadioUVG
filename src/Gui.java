@@ -12,7 +12,7 @@ public class Gui {
 
 	private JFrame frame;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
-	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
+	
 
 	/**
 	 * Launch the application.
