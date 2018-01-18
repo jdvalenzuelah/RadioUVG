@@ -50,7 +50,7 @@ public class Gui {
 		boton1.setBounds(53, 182, 97, 25);
 		frame.getContentPane().add(boton1);
 		
-		JButton boton2 = new JButton("boton 2");
+		JButton boton2 = new JButton("Boton 2");
 		boton2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -58,47 +58,47 @@ public class Gui {
 		boton2.setBounds(162, 182, 97, 25);
 		frame.getContentPane().add(boton2);
 		
-		JButton boton3 = new JButton("boton 3");
+		JButton boton3 = new JButton("Boton 3");
 		boton3.setBounds(53, 220, 97, 25);
 		frame.getContentPane().add(boton3);
 		
-		JButton boton4 = new JButton("boton 4");
+		JButton boton4 = new JButton("Boton 4");
 		boton4.setBounds(162, 220, 97, 25);
 		frame.getContentPane().add(boton4);
 		
-		JButton boton5 = new JButton("boton 5");
+		JButton boton5 = new JButton("Boton 5");
 		boton5.setBounds(53, 258, 97, 25);
 		frame.getContentPane().add(boton5);
 		
-		JButton boton6 = new JButton("boton 6");
+		JButton boton6 = new JButton("Boton 6");
 		boton6.setBounds(162, 258, 97, 25);
 		frame.getContentPane().add(boton6);
 		
-		JButton boton7 = new JButton("boton 7");
+		JButton boton7 = new JButton("Boton 7");
 		boton7.setBounds(53, 296, 97, 25);
 		frame.getContentPane().add(boton7);
 		
-		JButton boton8 = new JButton("boton 8");
+		JButton boton8 = new JButton("Boton 8");
 		boton8.setBounds(162, 296, 97, 25);
 		frame.getContentPane().add(boton8);
 		
-		JButton boton9 = new JButton("boton 9");
+		JButton boton9 = new JButton("Boton 9");
 		boton9.setBounds(53, 334, 97, 25);
 		frame.getContentPane().add(boton9);
 		
-		JButton boton10 = new JButton("boton 10");
+		JButton boton10 = new JButton("Boton 10");
 		boton10.setBounds(162, 334, 97, 25);
 		frame.getContentPane().add(boton10);
 		
-		JButton boton11 = new JButton("boton 11");
+		JButton boton11 = new JButton("Boton 11");
 		boton11.setBounds(53, 372, 97, 25);
 		frame.getContentPane().add(boton11);
 		
-		JButton boton12 = new JButton("boton 12");
+		JButton boton12 = new JButton("Boton 12");
 		boton12.setBounds(162, 372, 97, 25);
 		frame.getContentPane().add(boton12);
 		
-		JButton btnNewButton = new JButton("prender");
+		JButton btnNewButton = new JButton("Prender");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -106,7 +106,7 @@ public class Gui {
 		btnNewButton.setBounds(188, 426, 112, 40);
 		frame.getContentPane().add(btnNewButton);
 		
-		JButton btnApagar = new JButton("apagar");
+		JButton btnApagar = new JButton("Apagar");
 		btnApagar.setBounds(12, 426, 112, 40);
 		frame.getContentPane().add(btnApagar);
 		
