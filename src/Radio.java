@@ -37,6 +37,10 @@ public class Radio implements RadioI {
 		this.estacionesGuardadas = estacionesGuardadas;
 	}
 
+
+	/* (non-Javadoc)
+	 * @see RadioI#frecAdelante()
+	 */
 	@Override
 	public String frecAdelante() {
 		switch(this.frecueciaActual.toLowerCase()) {
@@ -58,6 +62,9 @@ public class Radio implements RadioI {
 		return this.estacionActual;
 	}
 
+	/* (non-Javadoc)
+	 * @see RadioI#frecAtras()
+	 */
 	@Override
 	public String frecAtras() {
 		switch(this.frecueciaActual.toLowerCase()) {
@@ -81,22 +88,40 @@ public class Radio implements RadioI {
 		return this.estacionActual;
 	}
 
+	/* (non-Javadoc)
+	 * @see RadioI#prender()
+	 */
 	@Override
 	public boolean prender() {
-		// TODO Auto-generated method stub
-		return false;
+		this.power = true;
+		return power;
 	}
 
+	/* (non-Javadoc)
+	 * @see RadioI#apagar()
+	 */
 	@Override
 	public boolean apagar() {
-		// TODO Auto-generated method stub
-		return false;
+		this.power = false;
+		return power;
 	}
 
+	/* (non-Javadoc)
+	 * @see RadioI#cambioFrecuencia()
+	 */
 	@Override
 	public String cambioFrecuencia() {
-		// TODO Auto-generated method stub
-		return null;
+		if(this.frecueciaActual.toLowerCase().equals("am")){
+			this.frecueciaActual = "fm";
+			this.estacionActual = "87.9";
+		}else if(this.frecueciaActual.toLowerCase().equals("fm")) {
+			this.frecueciaActual = "am";
+			this.estacionActual = "530";
+		}else {
+			this.frecueciaActual = "fm";
+			this.estacionActual = "87.9";
+		}
+		return this.frecueciaActual;
 	}
 
 	@Override
