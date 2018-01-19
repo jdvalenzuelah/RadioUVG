@@ -215,6 +215,7 @@ public class Radio implements RadioI {
 	 */
 	@Override
 	public String mostrarEstacionBoton(int pos) {
+		pos = pos -1;
 		if(pos>=0 && pos <= 11) {
 			this.estacionActual = this.estacionesGuardadas[pos][0];
 			this.frecueciaActual = this.estacionesGuardadas[pos][1];
