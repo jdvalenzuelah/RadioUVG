@@ -39,14 +39,7 @@ public interface RadioI {
      * @return Frecuencia en la cual se encuentra la radio (AM o FM).
      */
     public String cambioFrecuencia();
-    
-    /**
-     * Guarda una estacion de radio en uno de los doce botonoes que tiene la radio
-     * enumerados de 1 a 12.
-     * @param frec Estacion de radio que se guardara
-     * @param pos Numero del boton donde se guarda el boton
-     */
-    public void guardarFrec(float frec, int pos);
+
     
     /**
      * Metodo muestra la estacion actual en la cual la radio se encuentra sintonizada

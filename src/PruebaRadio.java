@@ -41,7 +41,7 @@ public class PruebaRadio {
 	@Test
 	public void pruebaGuardarEstacion() {
 		for(int i = 1; i < 13; i++) {
-			radio.guardarFrec((float) 87.9, i);
+			radio.guardarEstacionActual((i));
 		}
 		
 		for(int x = 1; x < 13; x++) {

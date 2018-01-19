@@ -239,7 +239,7 @@ public class Gui {
 				radio.cambioFrecuencia();
 				txtEstacion.setText("Estacion: " + radio.mostrarEstacion());
 			}else if(e.getSource().equals(btnGuardarEstacion)) {
-				radio.guardarFrec(Float.parseFloat(radio.mostrarEstacion()), dialogBox());
+				radio.guardarEstacionActual(dialogBox());
 			}else if(e.getSource().equals(boton1)) {
 				txtEstacion.setText("Estacion:" + radio.obtenerEstacion(1));
 			}else if(e.getSource().equals(boton2)) {

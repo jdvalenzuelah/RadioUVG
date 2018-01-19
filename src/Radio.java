@@ -78,6 +78,10 @@ public class Radio implements RadioI {
 		this.estacionActual = "530";
 		this.power = false;
 		this.estacionesGuardadas = new String[12][2];
+		for(int i = 0; i < 13; i++) {
+			this.estacionesGuardadas[i][0] = "530";
+			this.estacionesGuardadas[i][1] = "am"
+		}
 	}
 	
 	/**
@@ -182,25 +186,7 @@ public class Radio implements RadioI {
 		return this.frecueciaActual;
 	}
 
-	/* (non-Javadoc)
-	 * @see RadioI#guardarFrec(float, int)
-	 */
-	@Override
-	public void guardarFrec(float frec, int pos) {
-		// Ajustamos a las posiciones del vector
-		pos = pos -1;
-		String est = Float.toString(frec);
-		if(pos>=0 && pos <= 11) {	
-			if(frec < 530) {
-				this.estacionesGuardadas[pos][0] = est;
-				this.estacionesGuardadas[pos][1] = "fm";
-			}else {
-				this.estacionesGuardadas[pos][0] = est;
-				this.estacionesGuardadas[pos][1] = "am";
-			}
-		}
-		
-	}
+
 
 	/* (non-Javadoc)
 	 * @see RadioI#mostrarEstacion()
@@ -246,13 +232,13 @@ public class Radio implements RadioI {
 	public void guardarEstacionActual(int pos) {
 		// Ajustamos a las posiciones del vector
 				pos = pos -1;
-				String est = this.frecueciaActual;
+				Float est = Float.parseFloat(this.estacionActual);
 				if(pos>=0 && pos <= 11) {	
-					if(frec < 530) {
-						this.estacionesGuardadas[pos][0] = est;
+					if(est < 530) {
+						this.estacionesGuardadas[pos][0] = this.estacionActual;
 						this.estacionesGuardadas[pos][1] = "fm";
 					}else {
-						this.estacionesGuardadas[pos][0] = est;
+						this.estacionesGuardadas[pos][0] = this.estacionActual;
 						this.estacionesGuardadas[pos][1] = "am";
 					}
 				}
