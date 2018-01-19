@@ -79,8 +79,6 @@ public class Radio implements RadioI {
 		this.power = false;
 		this.estacionesGuardadas = new String[12][2];
 		
-		
-		
 	}
 	
 	/**
