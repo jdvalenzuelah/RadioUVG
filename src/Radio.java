@@ -74,8 +74,8 @@ public class Radio implements RadioI {
 	 * Constructor del obejeto
 	 */
 	public Radio() {
-		this.frecueciaActual = "am";
-		this.estacionActual = "530";
+		this.frecueciaActual = "fm";
+		this.estacionActual = "87.9";
 		this.power = false;
 		this.estacionesGuardadas = new String[12][2];
 		
