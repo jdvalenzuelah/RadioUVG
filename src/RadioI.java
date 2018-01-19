@@ -59,7 +59,7 @@ public interface RadioI {
      * @param pos Posicion del boton donde la estacion esta guardada
      * @return Estacion donde esta guardada
      */
-    public String mostrarEstacionBoton(int pos);
+    public String obtenerEstacion(int pos);
 }
 
 

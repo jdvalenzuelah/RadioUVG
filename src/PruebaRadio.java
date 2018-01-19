@@ -45,8 +45,8 @@ public class PruebaRadio {
 		}
 		
 		for(int x = 1; x < 13; x++) {
-			assertEquals("87.9",radio.mostrarEstacionBoton(x));
-			System.out.println(radio.mostrarEstacionBoton(x));
+			assertEquals("87.9",radio.obtenerEstacion(x));
+			System.out.println(radio.obtenerEstacion(x));
 		}
 		
 	}

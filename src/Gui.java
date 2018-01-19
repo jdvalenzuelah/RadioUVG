@@ -241,39 +241,39 @@ public class Gui {
 			}else if(e.getSource().equals(btnGuardarEstacion)) {
 				radio.guardarFrec(Float.parseFloat(radio.mostrarEstacion()), dialogBox());
 			}else if(e.getSource().equals(boton1)) {
-				txtEstacion.setText("Estacion:" + radio.mostrarEstacionBoton(1));
+				txtEstacion.setText("Estacion:" + radio.obtenerEstacion(1));
 			}else if(e.getSource().equals(boton2)) {
-		        txtEstacion.setText("Estacion:" + radio.mostrarEstacionBoton(2));
+		        txtEstacion.setText("Estacion:" + radio.obtenerEstacion(2));
 			}
 			else if(e.getSource().equals(boton3)) {
-			        txtEstacion.setText("Estacion:" + radio.mostrarEstacionBoton(3));
+			        txtEstacion.setText("Estacion:" + radio.obtenerEstacion(3));
 			}
 			else if(e.getSource().equals(boton4)) {
-			        txtEstacion.setText("Estacion:" + radio.mostrarEstacionBoton(4));
+			        txtEstacion.setText("Estacion:" + radio.obtenerEstacion(4));
 			}
 			else if(e.getSource().equals(boton5)) {
-			        txtEstacion.setText("Estacion:" + radio.mostrarEstacionBoton(5));
+			        txtEstacion.setText("Estacion:" + radio.obtenerEstacion(5));
 			}
 			else if(e.getSource().equals(boton6)) {
-			        txtEstacion.setText("Estacion:" + radio.mostrarEstacionBoton(6));
+			        txtEstacion.setText("Estacion:" + radio.obtenerEstacion(6));
 			}
 			else if(e.getSource().equals(boton7)) {
-			        txtEstacion.setText("Estacion:" + radio.mostrarEstacionBoton(7));
+			        txtEstacion.setText("Estacion:" + radio.obtenerEstacion(7));
 			}
 			else if(e.getSource().equals(boton8)) {
-			        txtEstacion.setText("Estacion:" + radio.mostrarEstacionBoton(8));
+			        txtEstacion.setText("Estacion:" + radio.obtenerEstacion(8));
 			}
 			else if(e.getSource().equals(boton9)) {
-			        txtEstacion.setText("Estacion:" + radio.mostrarEstacionBoton(9));
+			        txtEstacion.setText("Estacion:" + radio.obtenerEstacion(9));
 			}
 			else if(e.getSource().equals(boton10)) {
-			        txtEstacion.setText("Estacion:" + radio.mostrarEstacionBoton(10));
+			        txtEstacion.setText("Estacion:" + radio.obtenerEstacion(10));
 			}
 			else if(e.getSource().equals(boton11)) {
-			        txtEstacion.setText("Estacion:" + radio.mostrarEstacionBoton(11));
+			        txtEstacion.setText("Estacion:" + radio.obtenerEstacion(11));
 			}
 			else if(e.getSource().equals(boton12)) {
-			        txtEstacion.setText("Estacion:" + radio.mostrarEstacionBoton(12));
+			        txtEstacion.setText("Estacion:" + radio.obtenerEstacion(12));
 			}
 			
 		}
