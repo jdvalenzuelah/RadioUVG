@@ -3,7 +3,8 @@
  */
 
 /**
- * @author David Valenzuela 171001, Fernando hengstenberg 17699
+ * @author David Valenzuela 171001
+ * @author Fernando Hengstenberd 17699
  *
  */
 public class Radio implements RadioI {

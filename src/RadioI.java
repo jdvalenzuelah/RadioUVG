@@ -3,9 +3,9 @@
  */
 
 /**
- * @author David Valenzuela, Fernando Hengstenberg
- *
- */
+ * @author David Valenzuela 171001
+ * @author Fernando Hengstenberd 17699
+ */	
 public interface RadioI {
 	
 	/**
