@@ -60,6 +60,24 @@ public interface RadioI {
      * @return Estacion donde esta guardada
      */
     public String obtenerEstacion(int pos);
+    
+    /**
+     * Metodo para ver el estado de la radio
+     * @return true si esta encendido, false si esta apagado
+     */
+    public boolean estaPrendido();
+    
+    /**
+     * Metodo para observar la frecuencia de la radio
+     * @return AM o FM
+     */
+    public String obtenerEstado();
+
+    /**
+     * Guardar la estacion que esta escuchando actualmente
+     * @param pos posicion a guardar
+     */
+	void guardarEstacionActual(int pos);
 }
 
 
