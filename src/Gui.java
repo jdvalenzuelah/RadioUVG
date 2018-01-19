@@ -10,7 +10,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.JTextField;
 
 public class Gui {
-
+//botones privados 
 	private JFrame frame;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private JButton boton1;
@@ -64,12 +64,13 @@ public class Gui {
 	 */
 	private void initialize() {
 		radio = new Radio();
-		
+	
 		frame = new JFrame();
 		frame.setBounds(100, 100, 410, 547);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		//Guardar emisora en botones
 		boton1 = new JButton("Boton 1");
 		boton1.setBounds(12, 182, 97, 25);
 		frame.getContentPane().add(boton1);
