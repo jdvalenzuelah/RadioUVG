@@ -11,25 +11,26 @@ public class Radio implements RadioI {
 	private boolean power;
 	private String frecueciaActual;
 	private String estacionActual;
-	private String[] estacionesGuardadas;
+	private String[][] estacionesGuardadas;
 	
 	/**
-	 * 
+	 * Constructor del obejeto
 	 */
 	public Radio() {
 		this.frecueciaActual = "am";
 		this.estacionActual = "530";
 		this.power = false;
-		this.estacionesGuardadas = new String[12];
+		this.estacionesGuardadas = new String[12][2];
 	}
 	
 	/**
+	 * Constructor utilizando parametros
 	 * @param power
 	 * @param frecueciaActual
 	 * @param estacionActual
 	 * @param estacionesGuardadas
 	 */
-	public Radio(boolean power, String frecueciaActual, String estacionActual, String[] estacionesGuardadas) {
+	public Radio(boolean power, String frecueciaActual, String estacionActual, String[][] estacionesGuardadas) {
 		super();
 		this.power = power;
 		this.frecueciaActual = frecueciaActual;
@@ -53,7 +54,7 @@ public class Radio implements RadioI {
 			break;
 		case "fm":
 			if(Double.parseDouble(this.estacionActual) < 107.9) {
-				this.estacionActual = String.format("%.1f", (Double.parseDouble(this.estacionActual) + 0.2));
+				this.estacionActual = Double.toString((Double.parseDouble(this.estacionActual) + 0.2));
 			}else {
 				this.estacionActual = Double.toString(87.9);
 			}
@@ -77,7 +78,7 @@ public class Radio implements RadioI {
 			break;
 		case "fm":
 			if(Double.parseDouble(this.estacionActual) > 87.9) {
-				this.estacionActual = String.format("%.1f", (Double.parseDouble(this.estacionActual) -0.2));
+				this.estacionActual = Double.toString((Double.parseDouble(this.estacionActual) -0.2));
 			}else {
 				this.estacionActual = Double.toString(107.9);
 				
@@ -130,9 +131,17 @@ public class Radio implements RadioI {
 	@Override
 	public void guardarFrec(float frec, int pos) {
 		// Ajustamos a las posiciones del vector
-		frec = frec -1; 
+		System.out.println(frec);
+		pos = pos -1;
+		String est = Float.toString(frec);
 		if(pos>=0 && pos <= 11) {	
-			this.estacionesGuardadas[pos] = Float.toString(frec);
+			if(frec < 530) {
+				this.estacionesGuardadas[pos][0] = est;
+				this.estacionesGuardadas[pos][1] = "fm";
+			}else {
+				this.estacionesGuardadas[pos][0] = est;
+				this.estacionesGuardadas[pos][1] = "am";
+			}
 		}
 		
 	}
@@ -142,6 +151,18 @@ public class Radio implements RadioI {
 	 */
 	@Override
 	public String mostrarEstacion() {
+		return this.estacionActual;
+	}
+
+	/* (non-Javadoc)
+	 * @see RadioI#mostrarEstacionBoton(int)
+	 */
+	@Override
+	public String mostrarEstacionBoton(int pos) {
+		if(pos>=0 && pos <= 11) {
+			this.estacionActual = this.estacionesGuardadas[pos][0];
+			this.frecueciaActual = this.estacionesGuardadas[pos][1];
+		}
 		return this.estacionActual;
 	}
 
