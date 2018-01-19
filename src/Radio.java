@@ -78,10 +78,9 @@ public class Radio implements RadioI {
 		this.estacionActual = "530";
 		this.power = false;
 		this.estacionesGuardadas = new String[12][2];
-		for(int i = 0; i < 13; i++) {
-			this.estacionesGuardadas[i][0] = "530";
-			this.estacionesGuardadas[i][1] = "am";
-		}
+		
+		
+		
 	}
 	
 	/**
