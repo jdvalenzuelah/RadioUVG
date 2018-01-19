@@ -153,6 +153,12 @@ public class Radio implements RadioI {
 	@Override
 	public boolean prender() {
 		this.power = true;
+		
+		for(int x = 0; x < 12; x++) {
+			this.estacionesGuardadas[x][0] = "530";
+			this.estacionesGuardadas[x][1] = "am";
+		}
+		
 		return power;
 	}
 
