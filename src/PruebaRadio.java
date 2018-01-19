@@ -7,6 +7,9 @@ public class PruebaRadio {
 
 	public RadioI radio = new Radio();
 	
+	/**
+	 * Codigo a ejecutar antes de cada prueba
+	 */
 	@Before
 	public void before() {
 		// Estado inicial AM 530
@@ -14,6 +17,9 @@ public class PruebaRadio {
 		
 	}
 	
+	/**
+	 * Prueba cambiar una emisora a FM
+	 */
 	@Test
 	public  void  pruebaCambioFrecuenciaAFM() {
 		// Cambio a FM
@@ -21,13 +27,29 @@ public class PruebaRadio {
 		assertEquals("fm", frecuencia);
 	}
 	
+	/**
+	 * Prueba cambiar una emisora a AM
+	 */
 	@Test
 	public void pruebaCambioFrecuenciaAAM() {
 		// Cambia a AM
 		String frecuencia = radio.cambioFrecuencia();
+		frecuencia = radio.cambioFrecuencia();
 		assertEquals("am", frecuencia);
 	}
 	
+	@Test
+	public void pruebaGuardarEstacion() {
+		for(int i = 1; i < 13; i++) {
+			radio.guardarFrec((float) 87.9, i);
+		}
+		
+		for(int x = 1; x < 13; x++) {
+			assertEquals("87.9",radio.mostrarEstacionBoton(x));
+			System.out.println(radio.mostrarEstacionBoton(x));
+		}
+		
+	}
 	
 	
 }

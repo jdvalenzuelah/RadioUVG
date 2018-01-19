@@ -8,6 +8,62 @@
  */
 public class Radio implements RadioI {
 
+	/**
+	 * @return the power
+	 */
+	public boolean isPower() {
+		return power;
+	}
+
+	/**
+	 * @param power the power to set
+	 */
+	public void setPower(boolean power) {
+		this.power = power;
+	}
+
+	/**
+	 * @return the frecueciaActual
+	 */
+	public String getFrecueciaActual() {
+		return frecueciaActual;
+	}
+
+	/**
+	 * @param frecueciaActual the frecueciaActual to set
+	 */
+	public void setFrecueciaActual(String frecueciaActual) {
+		this.frecueciaActual = frecueciaActual;
+	}
+
+	/**
+	 * @return the estacionActual
+	 */
+	public String getEstacionActual() {
+		return estacionActual;
+	}
+
+	/**
+	 * @param estacionActual the estacionActual to set
+	 */
+	public void setEstacionActual(String estacionActual) {
+		this.estacionActual = estacionActual;
+	}
+
+	/**
+	 * @return the estacionesGuardadas
+	 */
+	public String[][] getEstacionesGuardadas() {
+		return estacionesGuardadas;
+	}
+
+	/**
+	 * @param estacionesGuardadas the estacionesGuardadas to set
+	 */
+	public void setEstacionesGuardadas(String[][] estacionesGuardadas) {
+		this.estacionesGuardadas = estacionesGuardadas;
+	}
+
 	private boolean power;
 	private String frecueciaActual;
 	private String estacionActual;

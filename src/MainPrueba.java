@@ -6,6 +6,8 @@ public class MainPrueba {
 		// Estado inicial del objeto AM
 		prueba.pruebaCambioFrecuenciaAFM();
 		prueba.pruebaCambioFrecuenciaAAM();
+		prueba.pruebaGuardarEstacion();
+		
 	}
 
 }
